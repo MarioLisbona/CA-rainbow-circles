@@ -17,10 +17,11 @@ body {
 }
 
 #one::before {
+    display: block;
     content: "";
     background-color: royalblue;
-    height: 200%;
-    width: 200%;
+    height: 100px;
+    width: 100px;
     z-index: -1;
     position: absolute;
     border-radius: 50%;
@@ -29,10 +30,11 @@ body {
 }
 
 #one::after {
+    display: block;
     content: "";
     background-color: green;
-    height: 300%;
-    width: 300%;
+    height: 150px;
+    width: 150px;
     z-index: -2;
     position: absolute;
     border-radius: 50%;
@@ -50,24 +52,26 @@ body {
     border-radius: 50%;
 }
 
-.two::before {
+.three {
     content: "";
     background-color: orange;
-    height: 100%;
-    width: 100%;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
     z-index: -4;
     position: absolute;
 }
 
-.two::after {
+
+/* .three::after {
+    display: inline-block;
     content: "";
     background-color: red;
-    height: 125%;
-    width: 125%;
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
-    z-index: -5;
     position: absolute;
-    top: -12.5%;
-    left: -12.5%;
-}
+    z-index: -5;
+    top: -25px;
+    left: -25px;
+} */
