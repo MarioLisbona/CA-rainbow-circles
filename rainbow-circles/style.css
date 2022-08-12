@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#one {
+    background-color: rebeccapurple;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: relative;
+}
+/* I read on stackoverflow that pseudoelements are inline so you cannot adjust sizing. So i added display: block
+Hoever, it was already working on these two id# psuedo elements but not on the .class elements below.  */
+#one::before {
+    display: block;
+    content: "";
+    background-color: royalblue;
+    height: 100px;
+    width: 100px;
+    z-index: -1;
+    position: absolute;
+    border-radius: 50%;
+    top: -25px;
+    left: -25px;
+
+}
+
+#one::after {
+    display: block;
+    content: "";
+    background-color: green;
+    height: 150px;
+    width: 150px;
+    z-index: -2;
+    position: absolute;
+    border-radius: 50%;
+    top: -50px;
+    left: -50px;
+}
+
+.two {
+    background-color: yellow;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    z-index: -3;
+    position: absolute;
+    border-radius: 50%;
+}
+/* Not sure why but i had to leave this element basically unstyled otherwise .three::after would always sit on top of
+three::before even though the z-index was lower*/
+.three {
+    display: block;
+    position: absolute;
+}
+
+.three::before {
+    display: block;
+    content: "";
+    background-color: orange;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    z-index: -4;
+    position: absolute;
+    top: -125px;
+    left: -125px;
+}
+
+
+.three::after {
+    display: block;
+    content: "";
+    background-color: red;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -5;
+    top: -150px;
+    left: -150px;
+}
